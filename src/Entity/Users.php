@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UsersRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -36,6 +38,17 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(length: 100)]
     private ?string $prenom = null;
+
+    /**
+     * @var Collection<int, CompteRendu>
+     */
+    #[ORM\OneToMany(targetEntity: CompteRendu::class, mappedBy: 'user')]
+    private Collection $compteRendus;
+
+    public function __construct()
+    {
+        $this->compteRendus = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -132,6 +145,36 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPrenom(string $prenom): static
     {
         $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, CompteRendu>
+     */
+    public function getCompteRendus(): Collection
+    {
+        return $this->compteRendus;
+    }
+
+    public function addCompteRendu(CompteRendu $compteRendu): static
+    {
+        if (!$this->compteRendus->contains($compteRendu)) {
+            $this->compteRendus->add($compteRendu);
+            $compteRendu->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCompteRendu(CompteRendu $compteRendu): static
+    {
+        if ($this->compteRendus->removeElement($compteRendu)) {
+            // set the owning side to null (unless already changed)
+            if ($compteRendu->getUser() === $this) {
+                $compteRendu->setUser(null);
+            }
+        }
 
         return $this;
     }
