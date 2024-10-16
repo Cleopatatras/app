@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les animaux
+{% endblock %}
+
+{% block body %}
+
+	{# Entete title #}
+	<div class="container-fluid entete text-primary d-flex justify-content-center h-33">
+
+		<div class="container bg-secondary title">
+			<h1 class="text-center">Nos animaux</h1>
+		</div>
+	</div>
+
+	{# Section savane #}
+
+	<section class="section1 container">
+		<div class="container d-flex flex-column p-3">
+			<div class="text_section1 justify-content-center">
+
+				<h2>Nos animaux de la SAVANE</h2>
+			</div>
+
+			{# //Création des cartes animaux: #}
+
+			<div class="card container d-flex flex-row justify-content-center mb-3" style="width: 18rem; ">
+
+
+				{% for animal in animals %}
+					<img src="" class="card-img-top" alt="">
+					<div class="card-body">
+						<h5 class="card-title">{{animal.nom}}</h5>
+						<p class="card-text">{{animal.race}}.</p>
+						{# <p class="card-text">{{animal.habitat}}.</p> #}
+						<a href="#" class="btn btn-secondary text-primary">Voir tous les détails</a>
+					</div>
+				{% endfor %}
+
+			</div>
+
+		</div>
+
+	</section>
+	<section class="section1 container-fluid bg-secondary text-primary">
+		<div class="container d-flex flex-column p-3">
+			<div class="text_section1 justify-content-center text-primary">
+
+				<h2>Nos animaux de la JUNGLE</h2>
+			</div>
+
+			{# //Création des cartes animaux: #}
+
+			<div class="card container d-flex flex-row justify-content-center mb-3" style="width: 18rem; ">
+
+
+				{% for animal in animals %}
+					<img src="" class="card-img-top" alt="">
+					<div class="card-body">
+						<h5 class="card-title">{{animal.nom}}</h5>
+						<p class="card-text">{{animal.race}}.</p>
+						{# <p class="card-text">{{animal.habitat}}.</p> #}
+						<a href="#" class="btn btn-primary text-secondary">Voir tous les détails</a>
+					</div>
+				{% endfor %}
+
+			</div>
+
+		</div>
+
+	</section>
+
+	<section class="section1 container">
+		<div class="container d-flex flex-column p-3">
+			<div class="text_section1 justify-content-center">
+
+				<h2>Nos animaux du MARAIS</h2>
+			</div>
+
+			{# //Création des cartes animaux: #}
+
+			<div class="card container d-flex flex-row justify-content-center mb-3" style="width: 18rem; ">
+
+
+				{% for animal in animals %}
+					<img src="" class="card-img-top" alt="">
+					<div class="card-body">
+						<h5 class="card-title">{{animal.nom}}</h5>
+						<p class="card-text">{{animal.race}}.</p>
+						{# <p class="card-text">{{animal.habitat}}.</p> #}
+						<a href="#" class="btn btn-secondary text-primary">Voir tous les détails</a>
+					</div>
+				{% endfor %}
+
+			</div>
+
+		</div>
+
+	</section>
+
+	{# <img src="{{asset('assets/images/jungle/jungle1.jpg')}}" alt="Image de jungle" class="rounded img-fluid" width="40%"> #}
+
+
+{% endblock %}

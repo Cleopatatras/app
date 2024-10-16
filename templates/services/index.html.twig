@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Services
+{% endblock %}
+
+{% block body %}
+
+	{# Entete title #}
+	<div class="container-fluid entete text-primary d-flex justify-content-center h-33">
+
+		<div class="container bg-secondary title">
+			<h1 class="text-center">Nos services</h1>
+		</div>
+	</div>
+
+	{# Les services #}
+
+	<div class="container-fluid bg-secondary text-primary d-flex">
+
+		<div class="d-flex flex-column align-items-center train justify-content-center p-3">
+
+			<img src="{{asset('/images/train.png')}}" alt="Image du train" class="rounded img-fluid" width="70%">
+
+
+			<p class="p-5">Partez à la découverte du Zoo dans notre petit train
+				<strong class="text-green">Electrique</strong>
+			</p>
+
+		</div>
+		<div class="d-flex flex-column align-items-center guide justify-content-center p-3 guide bg-primary text-secondary">
+
+			<p class="p-3">Selon la saison, des visites guidées vous sont proposées.</p>
+
+			<p class="p-3">Contactez-nous pour plus d'informations.</p>
+
+			<img src="{{asset('/images/guide.png')}}" alt="Image du guide" class="rounded img-fluid" width="70%">
+
+
+		</div>
+
+
+		<div class="resto d-flex flex-column align-items-center justify-content-center p-3">
+
+			<img src="{{asset('/images/assiette.png')}}" alt="Image du resto" class="rounded img-fluid" width="70%">
+
+
+			<p class="p-5">Restauration sur place, boissons, sandwichs et assiettes.</p>
+
+		</div>
+
+
+	</div>
+
+
+{% endblock %}

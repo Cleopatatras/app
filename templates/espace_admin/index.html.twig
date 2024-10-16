@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace Administrateur
+{% endblock %}
+
+{% block body %}
+
+	<div class="container espaceAdmin mb-5">
+
+		<h1 class="text-center m-5">Espace administrateur</h1>
+
+		<div class="d-flex text-secondary mb-5 align-items-center">
+
+			<img src="{{asset("/images/reports/user.svg")}}" alt="user" width="5%">
+			<a href="/register">
+				<h3 class="text-secondary">Créer un compte</h3>
+			</a>
+		</div>
+
+		<div class="d-flex text-secondary mb-5 align-items-center">
+
+
+			<img src="{{asset("/images/reports/infos.svg")}}" alt="user" width="5%">
+			<a href="#">
+				<h3 class="text-secondary">Modifier les informations générales</h3>
+			</a>
+		</div>
+		<div class="d-flex text-secondary mb-5 align-items-center">
+
+			<img src="{{asset("/images/reports/report2.svg")}}" alt="user" width="5%">
+			<a href="#">
+				<h3 class="text-secondary">Consulter les rapports</h3>
+			</a>
+		</div>
+		<div class="d-flex text-secondary mb-5 align-items-center">
+
+			<img src="{{asset("/images/reports/top.svg")}}" alt="user" width="5%">
+			<a href="#">
+				<h3 class="text-secondary">Voir le palmarès des animaux</h3>
+			</a>
+		</div>
+
+	</div>
+
+
+{% endblock %}

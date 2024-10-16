@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ajouter un animal
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+
+		<h1>Ajouter un animal</h1>
+
+		{{form_start(animalForm)}}
+		{{form_row(animalForm.nom)}}
+		{{form_row(animalForm.race)}}
+		{{form_row(animalForm.habitat)}}
+		{{form_row(animalForm.default_image)}}
+
+		<button type="submit">Envoyer</button>
+		{{form_end(animalForm)}}
+
+	</div>
+{% endblock %}

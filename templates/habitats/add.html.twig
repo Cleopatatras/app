@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un Habitat
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+
+		<h1>Ajouter un habitat :</h1>
+
+		{{form_start(habitatForm)}}
+		{{form_row(habitatForm.nomHab)}}
+		{{form_row(habitatForm.description)}}
+		{{form_row(habitatForm.default_image)}}
+
+		<button type="submit">Envoyer</button>
+		{{form_end(habitatForm)}}
+
+
+	</div>
+
+
+{% endblock %}
